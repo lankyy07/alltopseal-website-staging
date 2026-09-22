@@ -1,0 +1,11 @@
+// OPTIONAL EXAMPLE — use ONLY if your existing project is Cloudflare Workers with static assets.
+// Rename to wrangler.jsonc at repo root and replace the name with YOUR existing Worker name.
+// Do not paste this into a Pages project that already deploys correctly.
+{
+  "name": "REPLACE-WITH-YOUR-EXISTING-WORKER-NAME",
+  "compatibility_date": "2026-09-22",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
