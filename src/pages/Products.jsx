@@ -20,7 +20,7 @@ export default function Products() {
     <>
       <Seo
         title="Industrial Sealing Products Nigeria | ALL TOPSEAL"
-        description="Browse our catalogue of industrial sealing products: flange gaskets, custom gasket fabrication, non-asbestos sheets, SBR rubber, rubberised cork, gland packing and sealing rope. ALL TOPSEAL, Lagos."
+        description="Browse our catalogue of industrial sealing products: flange gaskets, spiral wound gaskets, custom gasket fabrication, non-asbestos sheets, SBR rubber, rubberised cork, gland packing and sealing rope. ALL TOPSEAL, Lagos."
         jsonLd={jsonLd}
       />
 

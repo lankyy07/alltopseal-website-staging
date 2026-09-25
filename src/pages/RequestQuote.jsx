@@ -14,6 +14,7 @@ const empty = {
   gasket_type: "", od: "", id_dim: "", pcd: "", bolt_hole_diameter: "", bolt_hole_quantity: "",
   length: "", width: "", internal_opening: "", hole_spacing: "", special_dimensions: "",
   equipment: "", medium: "", temperature: "", pressure: "", notes: "",
+  flange_standard: "", pressure_class: "", flange_facing: "", winding_metal: "", filler_material: "", guide_rings: "",
 };
 
 function Field({ label, name, value, onChange, placeholder, type = "text", required }) {
@@ -151,7 +152,7 @@ export default function RequestQuote() {
             <input type="hidden" name="_subject" value="NEW ALL TOPSEAL TECHNICAL RFQ" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://www.alltopseal.com/request-quote?submitted=1" />
+            <input type="hidden" name="_next" value={`${window.location.origin}/request-quote?submitted=1`} />
             <input type="text" name="_honey" className="hidden" tabIndex="-1" autoComplete="off" />
             {/* Customer details */}
             <SectionCard title="Customer Details" subtitle="Tell us who you are and where to deliver.">
@@ -170,7 +171,7 @@ export default function RequestQuote() {
                 <Label htmlFor="product_material" className="text-sm font-semibold text-slate-700 mb-1.5 block">
                   Product / material <span className="text-xs text-slate-400 font-normal">(optional)</span>
                 </Label>
-                <Input id="product_material" list="product-list" name="product_material" value={form.product_material} onChange={onChange} placeholder="e.g. Flange gaskets, non-asbestos sheet, gland packing" />
+                <Input id="product_material" list="product-list" name="product_material" value={form.product_material} onChange={onChange} placeholder="e.g. Spiral wound gasket, flange gasket, non-asbestos sheet, gland packing" />
                 <datalist id="product-list">
                   {products.map((p) => <option key={p.slug} value={p.name} />)}
                 </datalist>
@@ -180,6 +181,18 @@ export default function RequestQuote() {
               <Field label="Supply form" name="supply_form" value={form.supply_form} onChange={onChange} placeholder="e.g. full sheet, cut gaskets" />
               <Field label="Application" name="application" value={form.application} onChange={onChange} placeholder="e.g. pump flange, boiler handhole" />
             </SectionCard>
+
+            {/* Spiral wound RFQ fields are shown when the product is selected. */}
+            {form.product_material.toLowerCase().includes("spiral") && (
+              <SectionCard title="Spiral Wound Gasket Specifications" subtitle="Provide what you know; we will confirm final specifications and sourcing availability.">
+                <Field label="Flange standard" name="flange_standard" value={form.flange_standard} onChange={onChange} placeholder="e.g. ASME B16.5 / drawing reference" />
+                <Field label="Pressure class" name="pressure_class" value={form.pressure_class} onChange={onChange} placeholder="150, 300, 600, 900 or 1500" />
+                <Field label="Flange facing" name="flange_facing" value={form.flange_facing} onChange={onChange} placeholder="RF, FF or other" />
+                <Field label="Winding metal" name="winding_metal" value={form.winding_metal} onChange={onChange} placeholder="e.g. 316 stainless steel, if specified" />
+                <Field label="Filler material" name="filler_material" value={form.filler_material} onChange={onChange} placeholder="e.g. graphite / PTFE, if specified" />
+                <Field label="Guide rings" name="guide_rings" value={form.guide_rings} onChange={onChange} placeholder="Inner ring / outer ring / both" />
+              </SectionCard>
+            )}
 
             {/* Circular dimensions */}
             <SectionCard title="Circular Gasket Dimensions" subtitle="For circular or full-face flange gaskets.">

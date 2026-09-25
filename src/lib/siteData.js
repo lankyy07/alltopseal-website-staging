@@ -25,7 +25,7 @@ export const waLink = (msg = waMessage) =>
 export const telLink = `tel:+${company.whatsapp}`;
 export const mailLink = `mailto:${company.email}`;
 
-// Generated industrial imagery (placeholders replaced automatically by the platform)
+// Bundled catalogue imagery stored in public/assets/ (illustrative, not a specification).
 export const images = {
   hero: "/assets/hero.webp",
   flangeGaskets: "/assets/flange.webp",
@@ -35,6 +35,7 @@ export const images = {
   rubberisedCork: "/assets/cork.webp",
   glandPacking: "/assets/packing.webp",
   sealingRope: "/assets/rope.webp",
+  spiralWound: "/assets/spiral-wound.webp",
   industrialPlant: "/assets/industrial-plant.webp",
   fabrication: "/assets/fabrication.webp",
 };
@@ -288,6 +289,51 @@ export const products = [
       title: "Industrial Sealing Rope & Tape Supplier Nigeria | ALL TOPSEAL",
       description:
         "General-purpose industrial sealing rope and tape for sealing, packing and jointing applications. ALL TOPSEAL, Lagos.",
+    },
+  },
+  {
+    slug: "spiral-wound-gaskets",
+    name: "Spiral Wound Gaskets",
+    tagline: "Outsourced spiral wound gaskets for higher-pressure flange sealing applications.",
+    image: images.spiralWound,
+    short:
+      "Spiral wound gaskets sourced to customer specification for industrial flange joints, including class 150 to 1500 requirements.",
+    overview:
+      "ALL TOPSEAL can support outsourced supply of spiral wound gaskets for industrial flange applications where customers need a reliable sourcing partner. These gaskets are commonly specified for raised-face and flat-face flange joints in more demanding services. We can assist with enquiries for standard and custom requirements, including class 150, 300, 600, 900 and 1500 configurations, subject to technical confirmation and sourcing lead time.",
+    applications: [
+      "Process piping and refinery flange joints",
+      "Heat exchangers, boilers and pressure equipment",
+      "Oil & gas, petrochemical and power applications",
+      "Steam, hydrocarbon and general industrial service",
+      "Maintenance shutdown replacements and project supply",
+    ],
+    forms: [
+      "Spiral wound gaskets with outer ring",
+      "Spiral wound gaskets with inner and outer ring",
+      "Raised-face and flat-face flange configurations",
+      "ASME pressure classes 150 to 1500",
+      "Sizes and materials subject to sourcing and confirmation",
+    ],
+    requestInfo: [
+      "Nominal pipe size / flange size",
+      "Pressure class (150 - 1500)",
+      "Flange facing type (RF / FF / other)",
+      "Winding metal and filler material if known",
+      "Inner ring / outer ring requirement",
+      "Applicable standard or drawing",
+      "Quantity",
+      "Application and service conditions",
+    ],
+    technicalNotes: [
+      "Please share the flange standard, size and pressure class for accurate quotation.",
+      "Material selection depends on medium, temperature, pressure and corrosion requirements.",
+      "Class 150 to 1500 supply is supported on an outsourced / sourcing basis.",
+      "Lead time, MOQ and final availability are confirmed against each enquiry.",
+    ],
+    seo: {
+      title: "Spiral Wound Gasket Supplier Nigeria | ALL TOPSEAL",
+      description:
+        "Outsourced spiral wound gaskets for industrial flange applications, including class 150 to 1500 requirements. Send your flange size, class and specification to ALL TOPSEAL, Lagos.",
     },
   },
 ];

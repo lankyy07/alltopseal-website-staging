@@ -19,7 +19,7 @@ export default function About() {
     "@type": "LocalBusiness",
     name: "Emma Onyeco Investment Company Limited",
     alternateName: "ALL TOPSEAL",
-    image: company.websiteUrl + "/logo.png",
+    image: company.websiteUrl + "/favicon.svg",
     "@id": company.websiteUrl,
     url: company.websiteUrl,
     telephone: "+" + company.whatsapp,

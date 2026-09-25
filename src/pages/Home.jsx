@@ -18,7 +18,7 @@ const iconMap = {
 
 export default function Home() {
   const featured = products.filter((p) =>
-    ["flange-gaskets", "custom-gaskets", "non-asbestos-gasket-sheets", "sbr-rubber-sheets", "rubberised-cork", "gland-packing"].includes(p.slug)
+    ["flange-gaskets", "custom-gaskets", "non-asbestos-gasket-sheets", "sbr-rubber-sheets", "rubberised-cork", "gland-packing", "spiral-wound-gaskets"].includes(p.slug)
   );
   const workflow = [
     { icon: ClipboardList, label: "Requirement", text: "You share the drawing, dimensions, photo or sample." },
@@ -49,7 +49,7 @@ export default function Home() {
     <>
       <Seo
         title="ALL TOPSEAL | Industrial Gaskets & Sealing Materials Lagos, Nigeria"
-        description="ALL TOPSEAL supplies industrial sealing materials and custom gasket fabrication from drawings, dimensions, photographs or samples. Flange gaskets, gasket sheets, rubber, cork and gland packing for B2B buyers in Lagos, Nigeria."
+        description="ALL TOPSEAL supplies industrial sealing materials and custom gasket fabrication from drawings, dimensions, photographs or samples. Flange gaskets, spiral wound gaskets, gasket sheets, rubber, cork and gland packing for B2B buyers in Lagos, Nigeria."
         jsonLd={jsonLd}
       />
 
@@ -133,7 +133,7 @@ export default function Home() {
               <h3 className="text-xl font-black text-[#0a1a2e] mb-2">Wholesale Material Supply</h3>
               <p className="text-slate-600 mb-5">For buyers looking for bulk and stock supply of:</p>
               <ul className="space-y-2 mb-6">
-                {["Gasket sheets", "Rubberised cork", "Rubber sheets", "Gland packing", "Bulk industrial supply"].map((t) => (
+                {["Gasket sheets", "Rubberised cork", "Rubber sheets", "Gland packing", "Spiral wound gaskets", "Bulk industrial supply"].map((t) => (
                   <li key={t} className="flex items-center gap-2 text-sm text-slate-700">
                     <CheckCircle2 className="w-4 h-4 text-[#c9a227] shrink-0" /> {t}
                   </li>
