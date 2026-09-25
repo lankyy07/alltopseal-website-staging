@@ -1,11 +1,13 @@
-# Test commands (Node 22.12+)
+# ALL TOPSEAL — prelaunch checks
 
-```bash
-npm ci
-npm run build
-npm run preview
-```
-
-Open the localhost address printed by `npm run preview`. Test all paths in the deployment guide. Note: Vite preview is a test server; it is not identical to Cloudflare routing. Check `_redirects` inside `dist` and verify real Cloudflare preview routes before production cutover.
-
-Verify `index.html` remains in repo root, `src/` and `public/` exist, and no one has added the old static `*.html` files back to the root. Test one genuine FormSubmit enquiry end-to-end after deployment.
+- [ ] `npm ci && npm run build` succeeds (or Cloudflare build succeeds).
+- [ ] Wrangler deploy succeeds with no `_redirects` loop.
+- [ ] Homepage, `/products` and all product cards load on desktop and mobile.
+- [ ] `/products/non-asbestos-gasket-sheets`, `/products/rubberised-cork`, `/products/gland-packing`, `/products/sealing-rope-tape` show the approved new imagery.
+- [ ] `/products/spiral-wound-gaskets` shows outsourced supply and classes 150–1500; linked in catalogue, navigation and homepage.
+- [ ] Spiral wound RFQ fields appear when that product is selected and are included in the received email.
+- [ ] RFQ from staging remains on staging after submission; received email and attached PDF/image verified.
+- [ ] Correct phone, email, legal and trading names, address, and WhatsApp destination.
+- [ ] Deep-link refresh works; legacy clean and .html URLs redirect appropriately.
+- [ ] `/sitemap.xml` contains the new spiral wound product.
+- [ ] Production Worker name verified and rollback recorded before release.

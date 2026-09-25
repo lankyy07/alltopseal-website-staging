@@ -1,32 +1,24 @@
-# Emma Onyeco Investment Company Limited — ALL TOPSEAL
+# ALL TOPSEAL — GitHub / Cloudflare Workers staging source
 
-This is the **GitHub source** for the Base44-inspired multi-page website. It is a React / Vite site, **not** the static HTML site previously hosted on alltopseal.com.
+Legal company: Emma Onyeco Investment Company Limited. Trading name: ALL TOPSEAL.
 
-## Quick start
+**This package is the React/Vite SOURCE, not a built HTML-only website.** All project files are at the ZIP root, ready to place in an existing repository root. It contains no `node_modules` or `dist`. Do not upload the ZIP file itself to GitHub. The named `wrangler.jsonc` targets **only** the existing `alltopseal-website-staging` Worker. Do not deploy it to the live production Worker without first changing the `name` to the confirmed exact production Worker name.
 
-- Node.js 22.12+ (or 20.19+)
-- `npm ci`
-- `npm run build`
-- The output to publish is `dist/`, which Vite generates; do not upload `dist/` and `src/` together as your live site.
+### Staging settings
 
-Cloudflare Pages (GitHub-connected): build command `npm run build`, output directory `dist`, root directory `/`, production branch `main`. The file `public/_redirects` is copied to the build output to redirect legacy `.html` pages and serve the React app on direct visits.
+- Repository: `lankyy07/alltopseal-website-staging` (confirm the actual current repo in GitHub)
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy --config wrangler.jsonc` (plain `npx wrangler deploy` also works when Wrangler auto-detects this config)
+- Root directory: repository root (`/`)
+- Worker output: `dist/` (set in `wrangler.jsonc`)
+- Node.js: 22
 
-See **DEPLOY-AND-ROLLBACK.md** for the full replacement procedure and differences from the old website.
+The SPA fallback is configured in `wrangler.jsonc`. The `_redirects` file contains only legacy 301 redirects, **no `/* /index.html 200` rewrite** that previously failed deployment.
 
-## Contact / identity
+### Changes
 
-- Legal company: Emma Onyeco Investment Company Limited
-- Public trading brand: ALL TOPSEAL
-- Phone/WhatsApp: 0811 688 6306 / +2348116886306
-- WhatsApp username: @alltopseal
-- Orders and RFQs: mbuchi619@gmail.com
-- Website: https://www.alltopseal.com
-- Address: Zone D, Block 5, Shop 79, ASPAMDA, Lagos International Trade Fair Complex, Lagos-Badagry Expressway, Lagos State, Nigeria
+New locally bundled catalogue imagery for non-asbestos gasket sheets, rubberised cork, gland packing, and braided fibreglass rope; new spiral wound gasket image and an **outsourced-supply** product page for classes 150–1500 (subject to specification, sourcing and lead time). Product and RFQ navigation updated. Sitemap includes the new spiral wound page. RFQ confirmation remains on the domain where the form was submitted (staging or production).
 
-## Before accepting orders
+### Before live launch
 
-Confirm a test enquiry reaches the mailbox, including a drawing attachment; activate FormSubmit if requested. Changing the site alone does not activate the external mail-delivery service.
-
-## Known limitation
-
-The website is a client-rendered React single-page application with multiple routes; it does not include pre-rendered HTML for individual product URLs. Google may require JavaScript rendering to see page-specific metadata and content. The build has been statically inspected here, but cannot be run in this environment because npm registry access is unavailable. **A successful Cloudflare build and live route/form tests are required before switching the production domain.**
+Run `npm ci && npm run build` in a network-enabled environment, then test the Cloudflare staging URL. Test the RFQ via FormSubmit (including multiple drawing attachments where used), inspect the delivered email, check catalogue images, confirm redirects and mobile navigation. The new images are illustrative; confirm exact material grade/appearance with supplier datasheets for customer specifications. After staging approval, back up the live repository and change the Wrangler `name` to the existing **production Worker name** before deploying there. See `DEPLOY-AND-ROLLBACK.md`.

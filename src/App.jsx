@@ -12,6 +12,7 @@ import SBRRubberSheets from "@/pages/products/SBRRubberSheets";
 import RubberisedCork from "@/pages/products/RubberisedCork";
 import GlandPacking from "@/pages/products/GlandPacking";
 import SealingRopeTape from "@/pages/products/SealingRopeTape";
+import SpiralWoundGaskets from "@/pages/products/SpiralWoundGaskets";
 import Industries from "@/pages/Industries";
 import TechnicalResources from "@/pages/TechnicalResources";
 import HowToMeasure from "@/pages/HowToMeasure";
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/products/rubberised-cork" element={<RubberisedCork />} />
           <Route path="/products/gland-packing" element={<GlandPacking />} />
           <Route path="/products/sealing-rope-tape" element={<SealingRopeTape />} />
+          <Route path="/products/spiral-wound-gaskets" element={<SpiralWoundGaskets />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/technical-resources" element={<TechnicalResources />} />
           <Route path="/how-to-measure-a-gasket" element={<HowToMeasure />} />
